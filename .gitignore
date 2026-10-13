@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+node_modules/
+dist/
+backend/data/processed/*.parquet
+backend/data/processed/*.csv
+backend/data/app_state.sqlite3
+backend/data/raw/*.csv
+*.log

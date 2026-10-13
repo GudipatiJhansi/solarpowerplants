@@ -1,0 +1,37 @@
+{
+  "model_type": "IsolationForest",
+  "training_timestamp": "2026-10-10T08:04:14.765334+00:00",
+  "training_dataset": "Plant_1_Generation_Data.csv, Plant_2_Generation_Data.csv",
+  "feature_list": [
+    "power_kw",
+    "temperature_c",
+    "ambient_temperature_c",
+    "irradiance_w_m2",
+    "energy_kwh",
+    "power_kw_deviation",
+    "power_kw_rolling_std",
+    "temperature_c_deviation",
+    "temperature_c_rolling_std"
+  ],
+  "n_training_records": 77098,
+  "anomaly_count": 6168,
+  "model_status": "trained",
+  "known_limitations": "Unsupervised anomaly ranking only; scores are normalized within this training run, are not failure probabilities, and the model-relative condition index is not a validated equipment health score. Feature deviations are standardized-value indicators, not causal explanations.",
+  "feature_engineering": "Per-plant/equipment rolling window of four observations: power and module-temperature deviations from the rolling mean and rolling standard deviation; minimum two observations required.",
+  "explanation_threshold_z": 2.5,
+  "nighttime_filter": "Records with irradiation <= 0 are excluded from model fitting/scoring because zero irradiation and zero output are normal nighttime operation; raw records remain available in charts and history.",
+  "nighttime_records_excluded": 59330,
+  "health_score_method": "Model-relative condition index = 100 \u00d7 (1 \u2212 normalized anomaly score); this is not a validated equipment health measure.",
+  "contamination": 0.08,
+  "score_min": -0.12984821080760156,
+  "score_max": 0.18723027351754518,
+  "severity_thresholds": [
+    0.2515844109561498,
+    0.37730350517272215
+  ],
+  "source_data": "local historical CSV",
+  "source_files": [
+    "Plant_1_Generation_Data.csv",
+    "Plant_2_Generation_Data.csv"
+  ]
+}
